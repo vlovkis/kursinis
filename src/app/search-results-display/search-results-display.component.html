@@ -1,0 +1,3 @@
+<div *ngFor="let hit of hits; let i = index">
+  <app-search-result-card [hit]="hit" (cardSelected)="onCardSelected(hit)"></app-search-result-card>
+</div>

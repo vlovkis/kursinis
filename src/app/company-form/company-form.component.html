@@ -1,0 +1,43 @@
+<form [formGroup]="companyForm">
+  <div>
+    <label for="pavadinimas">Imones pavadinimas</label>
+    <input type="text" id="pavadinimas" formControlName="pavadinimas">
+  </div>
+  <div>
+    <label for="ja_kodas">Imones kodas</label>
+    <input type="text" id="ja_kodas" formControlName="ja_kodas">
+  </div>
+  <div>
+    <label for="pvm_kodas">PVM mokėtojo kodas</label>
+    <input type="text" id="pvm_kodas" formControlName="pvm_kodas">
+  </div>
+  <div>
+    <label for="street">Gatvė</label>
+    <input type="text" id="street" formControlName="street">
+  </div>
+  <div>
+    <label for="housenumber">Namo nr.</label>
+    <input type="text" id="housenumber" formControlName="housenumber">
+  </div>
+  <div>
+    <label for="flatnumber">Buto nr.</label>
+    <input type="text" id="flatnumber" formControlName="flatnumber">
+  </div>
+  <div>
+    <label for="city">Miestas</label>
+    <input type="text" id="city" formControlName="city">
+  </div>
+  <div>
+    <label for="postcode">Pašto kodas</label>
+    <input type="text" id="postcode" formControlName="postcode">
+  </div>
+  <div>
+    <label for="municipality">Rajonas</label>
+    <input type="text" id="municipality" formControlName="municipality">
+  </div>
+  <div>
+    <label for="country">Šalis</label>
+    <input type="text" id="country" formControlName="country">
+  </div>
+  <button (click)="submitForm()">Submit</button>
+</form>
