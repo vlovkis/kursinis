@@ -17,6 +17,12 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { MatCardModule } from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { FormPageComponent } from './form-page/form-page.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -28,18 +34,24 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     CompanyFormComponent,
     FooterComponent,
     LoadingSpinnerComponent,
+    LoginComponent,
+    FormPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RouterModule.forRoot([]),
     HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatGridListModule,
-    ReactiveFormsModule
+    MatCardModule,
+    ReactiveFormsModule,
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

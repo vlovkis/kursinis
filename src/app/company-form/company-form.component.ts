@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { CompanyService } from '../company.service';
 
 @Component({
   selector: 'app-company-form',
@@ -9,8 +10,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CompanyFormComponent {
   companyForm: FormGroup;
   @Input() selectedCompany: any;
+  companies: any[] = []; // List of companies to display
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private companyService: CompanyService) {
     this.companyForm = this.formBuilder.group({
       pavadinimas: '',
       ja_kodas: '',
@@ -23,6 +25,22 @@ export class CompanyFormComponent {
       municipality: '',
       country: ''
     });
+  }
+
+  ngOnInit() {
+    // Fetch the list of companies when the component initializes
+    this.fetchCompanies();
+  }
+
+  fetchCompanies() {
+    this.companyService.getCompanies().subscribe(
+      (companies: any[]) => {
+        this.companies = companies;
+      },
+      (error) => {
+        console.error('Error fetching companies:', error);
+      }
+    );
   }
 
   ngOnChanges() {
@@ -60,6 +78,26 @@ export class CompanyFormComponent {
   }
 
   submitForm() {
-    alert("Ši demo versija priklauso BSS IT UAB")
+    if (this.companyForm.valid && this.companyService) {
+      const newCompany = this.companyForm.value;
+
+      // Call the service to create a new company in-memory
+      this.companyService.createCompany(newCompany).subscribe(
+        (createdCompany: any) => {
+          console.log('New company created:', createdCompany);
+
+          this.fetchCompanies();
+          // Assuming you want to update the UI with the newly created company
+          // You can add logic to display the list of companies or the newly created one
+          this.companyService.getCompanies().subscribe((companies: any[]) => {
+            console.log('All companies:', companies);
+            // Update the UI or do something with the list of companies
+          });
+        },
+        (error) => {
+          console.error('Error creating company:', error);
+        }
+      );
+    }
   }
 }

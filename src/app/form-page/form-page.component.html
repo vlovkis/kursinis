@@ -1,0 +1,44 @@
+
+  <div class="menu-bar">
+    <button mat-button style="color: #d6d6d6 !important;">Namai</button>
+    <button mat-button style="color: #000000 !important;">Partnerių paieška</button>
+    <button mat-button style="color: #d6d6d6 !important;">Kontaktai</button>
+
+  </div>
+    <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+
+<div class="pavadinimas">
+  <div class="box">
+    <app-search-input></app-search-input>
+    <app-search-button (searchClicked)="search($event)"></app-search-button>
+  </div>
+</div>
+<mat-grid-list class="grid" cols="3" rowHeight="90%">
+
+  <mat-grid-tile><app-company-form [selectedCompany]="selectedCompany"></app-company-form></mat-grid-tile>
+  <mat-grid-tile>
+    <app-search-results-display [hits]="hits" (companySelected)="onCompanySelected($event)">
+    </app-search-results-display>
+    <div *ngIf="resultMessage !== ''" class="result-message">
+      <p>{{ resultMessage }}</p>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="company-list">
+      <h2 class="tekstas">Sukurti partneriai</h2>
+      <ul>
+        <li style="list-style: none;" *ngFor="let company of companies">
+          <button class="toggle-button" (click)="toggleDetails(company)">{{company.pavadinimas}}</button>
+          <div class="details-box" [@openClose]="company.showDetails ? 'open' : 'closed'" *ngIf="company.showDetails">
+            <p><strong>Įmonės pavadinimas:</strong> {{ company.pavadinimas }}</p>
+            <p><strong>PVM kodas:</strong> {{ company.pvm_kodas }}</p>
+            <p><strong>Įmonės kodas:</strong> {{ company.ja_kodas }}</p>
+            <p><strong>Adresas:</strong> {{ company.street }}, {{company.housenumber}}, {{company.city}}</p>
+            <p><strong>Pašto kodas:</strong> {{ company.postcode }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<app-footer></app-footer>

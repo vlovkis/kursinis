@@ -1,0 +1,128 @@
+.grid-container {
+  display: flex;
+  gap: 20px; /* Remove any gap between items */
+  justify-content: flex-start;
+}
+
+.secondBox{
+  top: 3vh;
+  position: relative;
+}
+
+.pavadinimas{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top:5%
+}
+
+.box{
+  display: flex;
+  flex-direction: row;
+}
+
+mat-menu {
+  background-color: #333 !important; /* Adjust the background color for the dropdown menu as needed */
+}
+
+mat-menu-item {
+  color: rgb(255, 255, 255) !important; /* Adjust the text color for the dropdown items as needed */
+}
+
+mat-menu-content {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Adjust the background color as needed */
+  padding: 10px;
+}
+
+.menu-bar {
+  display: flex;
+  background-color: #4B4E6D; /* Adjust the background color as needed */
+  padding: 10px;
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: rgb(255, 255, 255) !important;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+app-search-input {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+app-loading-spinner {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.result-message{
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.toggle-button {
+  background-color: #222222 !important;
+  font-weight: 400;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.toggle-button:hover {
+  background-color: #2980b9;
+}
+
+.details-box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+
+.details-box.open {
+  max-height: 500px;/* Adjust the maximum height as needed */
+}
+
+li{
+  padding: 0px !important;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+ul{
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.tesktas{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+

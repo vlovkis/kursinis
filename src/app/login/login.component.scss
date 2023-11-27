@@ -1,0 +1,41 @@
+/* YourComponent.component.scss */
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%; /* Adjust the width as needed */
+  margin: auto;
+  border: none;
+  box-shadow: none;
+  margin-top: 100px; /* Adjust the top margin as needed */
+  background-color: white;
+}
+
+mat-card-content {
+  width: 100%;
+}
+
+form.example-form {
+  width: 100%;
+}
+
+table.example-full-width {
+  width: 100%;
+}
+
+mat-form-field.example-full-width {
+  width: 100%;
+}
+
+mat-progress-spinner {
+  margin-top: 16px; /* Adjust the top margin as needed */
+}
+
+mat-card-actions {
+  margin-top: 16px; /* Adjust the top margin as needed */
+}
+
+button.mat-raised-button {
+  width: 100%;
+}

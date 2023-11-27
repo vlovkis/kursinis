@@ -1,15 +1,3 @@
-<div class="grid-container">
-  <div class="firstBox"><app-search-input></app-search-input><app-loading-spinner *ngIf="loading"></app-loading-spinner></div>
-  <div class="secondBox">
-    <app-search-button (searchClicked)="search($event)"></app-search-button>
 
-  </div>
-</div>
-<mat-grid-list class="grid" cols="3" rowHeight="100%">
-
-  <mat-grid-tile><app-search-results-display [hits]="hits" (companySelected)="onCompanySelected($event)"></app-search-results-display></mat-grid-tile>
-  <mat-grid-tile><app-company-form [selectedCompany]="selectedCompany"></app-company-form></mat-grid-tile>
-  <mat-grid-tile><app-footer></app-footer></mat-grid-tile>
-</mat-grid-list>
 
 <router-outlet></router-outlet>
